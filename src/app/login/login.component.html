@@ -1,15 +1,19 @@
-<div class="login-container">
-  <h2>Login</h2>
-  <form (ngSubmit)="login()">
-    <div>
-      <label>Email:</label>
-      <input type="email" [(ngModel)]="email" name="email" required />
-    </div>
-    <div>
-      <label>Password:</label>
-      <input type="password" [(ngModel)]="password" name="password" required />
-    </div>
-    <div *ngIf="error" class="error">{{ error }}</div>
-    <button type="submit">Login</button>
-  </form>
+<div class="login-bg">
+  <div class="login-container">
+    <h2>Login</h2>
+    <form (ngSubmit)="login()">
+      <div>
+        <label for="email">Email:</label>
+        <input id="email" type="email" [(ngModel)]="email" name="email" required />
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input id="password" type="password" [(ngModel)]="password" name="password" required />
+      </div>
+      <div *ngIf="error" class="error">{{ error }}</div>
+      <button type="submit">Login</button>
+    </form>
+    <button (click)="goToCreateUser()" class="create-user-btn">Create User</button>
+    <div *ngIf="showToast" class="toast">{{ error }}</div>
+  </div>
 </div>
